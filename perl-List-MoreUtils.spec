@@ -4,7 +4,7 @@
 #
 Name     : perl-List-MoreUtils
 Version  : 0.415
-Release  : 11
+Release  : 12
 URL      : http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.415.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.415.tar.gz
 Summary  : 'Provide the stuff missing in List::Util'
@@ -68,10 +68,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/List/MoreUtils.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/List/MoreUtils/Contributing.pod
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/List/MoreUtils/PP.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/List/MoreUtils/XS.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/List/MoreUtils.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/List/MoreUtils/Contributing.pod
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/List/MoreUtils/PP.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/List/MoreUtils/XS.pm
 
 %files doc
 %defattr(-,root,root,-)
@@ -79,4 +79,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/auto/List/MoreUtils/MoreUtils.so
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/auto/List/MoreUtils/MoreUtils.so
