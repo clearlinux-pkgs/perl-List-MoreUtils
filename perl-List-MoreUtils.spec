@@ -4,7 +4,7 @@
 #
 Name     : perl-List-MoreUtils
 Version  : 0.419
-Release  : 16
+Release  : 17
 URL      : http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.419.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.419.tar.gz
 Summary  : 'Provide the stuff missing in List::Util'
