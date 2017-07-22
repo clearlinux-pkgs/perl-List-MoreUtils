@@ -4,7 +4,7 @@
 #
 Name     : perl-List-MoreUtils
 Version  : 0.419
-Release  : 17
+Release  : 18
 URL      : http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.419.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.419.tar.gz
 Summary  : 'Provide the stuff missing in List::Util'
@@ -31,6 +31,9 @@ doc components for the perl-List-MoreUtils package.
 %setup -q -n List-MoreUtils-0.419
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
@@ -44,7 +47,7 @@ fi
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test
 
 %install
@@ -61,9 +64,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/List/MoreUtils.pm
-/usr/lib/perl5/site_perl/5.24.0/List/MoreUtils/Contributing.pod
-/usr/lib/perl5/site_perl/5.24.0/List/MoreUtils/PP.pm
+/usr/lib/perl5/site_perl/5.26.0/List/MoreUtils.pm
+/usr/lib/perl5/site_perl/5.26.0/List/MoreUtils/Contributing.pod
+/usr/lib/perl5/site_perl/5.26.0/List/MoreUtils/PP.pm
 
 %files doc
 %defattr(-,root,root,-)
