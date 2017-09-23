@@ -4,7 +4,7 @@
 #
 Name     : perl-List-MoreUtils
 Version  : 0.419
-Release  : 18
+Release  : 19
 URL      : http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.419.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.419.tar.gz
 Summary  : 'Provide the stuff missing in List::Util'
@@ -64,9 +64,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/List/MoreUtils.pm
-/usr/lib/perl5/site_perl/5.26.0/List/MoreUtils/Contributing.pod
-/usr/lib/perl5/site_perl/5.26.0/List/MoreUtils/PP.pm
+/usr/lib/perl5/site_perl/5.26.1/List/MoreUtils.pm
+/usr/lib/perl5/site_perl/5.26.1/List/MoreUtils/Contributing.pod
+/usr/lib/perl5/site_perl/5.26.1/List/MoreUtils/PP.pm
 
 %files doc
 %defattr(-,root,root,-)
