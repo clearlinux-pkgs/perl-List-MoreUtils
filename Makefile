@@ -1,5 +1,5 @@
 PKG_NAME := perl-List-MoreUtils
-URL := http://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-0.419.tar.gz
-
+URL = https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.428.tar.gz
+ARCHIVES = 
 
 include ../common/Makefile.common
