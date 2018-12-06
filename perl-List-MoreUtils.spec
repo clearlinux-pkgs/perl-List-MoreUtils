@@ -83,9 +83,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/List/MoreUtils.pm
-/usr/lib/perl5/vendor_perl/5.28.0/List/MoreUtils/Contributing.pod
-/usr/lib/perl5/vendor_perl/5.28.0/List/MoreUtils/PP.pm
+/usr/lib/perl5/vendor_perl/5.28.1List/MoreUtils.pm
+/usr/lib/perl5/vendor_perl/5.28.1List/MoreUtils/Contributing.pod
+/usr/lib/perl5/vendor_perl/5.28.1List/MoreUtils/PP.pm
 
 %files dev
 %defattr(-,root,root,-)
