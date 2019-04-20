@@ -4,11 +4,11 @@
 #
 Name     : perl-List-MoreUtils
 Version  : 0.428
-Release  : 33
+Release  : 34
 URL      : https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.428.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.428.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblist-moreutils-perl/liblist-moreutils-perl_0.416-1.debian.tar.xz
-Summary  : 'Provide the stuff missing in List::Util'
+Summary  : Provide the stuff missing in List::Util
 Group    : Development/Tools
 License  : Apache-2.0 GPL-2.0 MIT
 Requires: perl-List-MoreUtils-license = %{version}-%{release}
@@ -25,6 +25,7 @@ The name of the script corresponds to the #rt bug number.
 Summary: dev components for the perl-List-MoreUtils package.
 Group: Development
 Provides: perl-List-MoreUtils-devel = %{version}-%{release}
+Requires: perl-List-MoreUtils = %{version}-%{release}
 
 %description dev
 dev components for the perl-List-MoreUtils package.
@@ -43,7 +44,7 @@ license components for the perl-List-MoreUtils package.
 cd ..
 %setup -q -T -D -n List-MoreUtils-0.428 -b 1
 mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/List-MoreUtils-0.428/deblicense/
+cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/List-MoreUtils-0.428/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
