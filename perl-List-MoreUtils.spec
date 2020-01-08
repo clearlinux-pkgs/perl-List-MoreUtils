@@ -4,14 +4,15 @@
 #
 Name     : perl-List-MoreUtils
 Version  : 0.428
-Release  : 34
+Release  : 35
 URL      : https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.428.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.428.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblist-moreutils-perl/liblist-moreutils-perl_0.416-1.debian.tar.xz
-Summary  : Provide the stuff missing in List::Util
+Summary  : 'Provide the stuff missing in List::Util'
 Group    : Development/Tools
 License  : Apache-2.0 GPL-2.0 MIT
 Requires: perl-List-MoreUtils-license = %{version}-%{release}
+Requires: perl-List-MoreUtils-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Exporter::Tiny)
 BuildRequires : perl(List::MoreUtils::XS)
@@ -39,18 +40,28 @@ Group: Default
 license components for the perl-List-MoreUtils package.
 
 
+%package perl
+Summary: perl components for the perl-List-MoreUtils package.
+Group: Default
+Requires: perl-List-MoreUtils = %{version}-%{release}
+
+%description perl
+perl components for the perl-List-MoreUtils package.
+
+
 %prep
 %setup -q -n List-MoreUtils-0.428
-cd ..
-%setup -q -T -D -n List-MoreUtils-0.428 -b 1
+cd %{_builddir}
+tar xf %{_sourcedir}/liblist-moreutils-perl_0.416-1.debian.tar.xz
+cd %{_builddir}/List-MoreUtils-0.428
 mkdir -p deblicense/
-cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/List-MoreUtils-0.428/deblicense/
+cp -r %{_builddir}/debian/* %{_builddir}/List-MoreUtils-0.428/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -60,7 +71,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -69,9 +80,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/deblicense_copyright
-cp t/LICENSE %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/t_LICENSE
+cp %{_builddir}/List-MoreUtils-0.428/LICENSE %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/92170cdc034b2ff819323ff670d3b7266c8bffcd
+cp %{_builddir}/List-MoreUtils-0.428/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/446678782aae2b15edd14ce41e923805e8e0345a
+cp %{_builddir}/List-MoreUtils-0.428/t/LICENSE %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/92170cdc034b2ff819323ff670d3b7266c8bffcd
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -84,9 +95,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/List/MoreUtils.pm
-/usr/lib/perl5/vendor_perl/5.28.2/List/MoreUtils/Contributing.pod
-/usr/lib/perl5/vendor_perl/5.28.2/List/MoreUtils/PP.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -96,6 +104,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-List-MoreUtils/LICENSE
-/usr/share/package-licenses/perl-List-MoreUtils/deblicense_copyright
-/usr/share/package-licenses/perl-List-MoreUtils/t_LICENSE
+/usr/share/package-licenses/perl-List-MoreUtils/446678782aae2b15edd14ce41e923805e8e0345a
+/usr/share/package-licenses/perl-List-MoreUtils/92170cdc034b2ff819323ff670d3b7266c8bffcd
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/List/MoreUtils.pm
+/usr/lib/perl5/vendor_perl/5.30.1/List/MoreUtils/Contributing.pod
+/usr/lib/perl5/vendor_perl/5.30.1/List/MoreUtils/PP.pm
