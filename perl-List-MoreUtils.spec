@@ -4,7 +4,7 @@
 #
 Name     : perl-List-MoreUtils
 Version  : 0.428
-Release  : 35
+Release  : 36
 URL      : https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.428.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.428.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblist-moreutils-perl/liblist-moreutils-perl_0.416-1.debian.tar.xz
@@ -18,9 +18,10 @@ BuildRequires : perl(Exporter::Tiny)
 BuildRequires : perl(List::MoreUtils::XS)
 
 %description
-This scripts were submitted to #rt as examples of
-memory leaks. All these memory leaks appear now to be fixed.
-The name of the script corresponds to the #rt bug number.
+# NAME
+List::MoreUtils - Provide the stuff missing in List::Util
+# SYNOPSIS
+# import specific functions
 
 %package dev
 Summary: dev components for the perl-List-MoreUtils package.
@@ -81,8 +82,8 @@ make TEST_VERBOSE=1 test
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils
 cp %{_builddir}/List-MoreUtils-0.428/LICENSE %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/92170cdc034b2ff819323ff670d3b7266c8bffcd
-cp %{_builddir}/List-MoreUtils-0.428/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/446678782aae2b15edd14ce41e923805e8e0345a
 cp %{_builddir}/List-MoreUtils-0.428/t/LICENSE %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/92170cdc034b2ff819323ff670d3b7266c8bffcd
+cp %{_builddir}/debian/copyright %{buildroot}/usr/share/package-licenses/perl-List-MoreUtils/446678782aae2b15edd14ce41e923805e8e0345a
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -109,6 +110,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/List/MoreUtils.pm
-/usr/lib/perl5/vendor_perl/5.30.1/List/MoreUtils/Contributing.pod
-/usr/lib/perl5/vendor_perl/5.30.1/List/MoreUtils/PP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/List/MoreUtils.pm
+/usr/lib/perl5/vendor_perl/5.30.2/List/MoreUtils/Contributing.pod
+/usr/lib/perl5/vendor_perl/5.30.2/List/MoreUtils/PP.pm
