@@ -4,7 +4,7 @@
 #
 Name     : perl-List-MoreUtils
 Version  : 0.430
-Release  : 45
+Release  : 46
 URL      : https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.430.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.430.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblist-moreutils-perl/liblist-moreutils-perl_0.416-1.debian.tar.xz
@@ -110,6 +110,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/List/MoreUtils.pm
-/usr/lib/perl5/vendor_perl/5.34.0/List/MoreUtils/Contributing.pod
-/usr/lib/perl5/vendor_perl/5.34.0/List/MoreUtils/PP.pm
+/usr/lib/perl5/*
