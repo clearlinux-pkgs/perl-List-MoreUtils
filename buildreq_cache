@@ -1,3 +1,4 @@
 0.430
 perl(Exporter::Tiny)
 perl(List::MoreUtils::XS)
+perl(Storable)
